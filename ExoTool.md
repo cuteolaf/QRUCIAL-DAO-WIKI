@@ -3,16 +3,16 @@
 		- Rough idea: [Docs](https://docs.docker.com/engine/reference/builder/)  
 		-  
 		  ```
-		  		  FROM rust:buster 	// this is the base / parent image we modify
+FROM rust:buster 	// this is the base / parent image we modify
+
+ENV ... // any env. variables we need to set
 		  		  
-		  		  ENV ... // any env. variables we need to set
-		  		  
-		  		  RUN 	// This is the install script that should grab and deploy the binary
-		  		  		// We need to checksum the binaries here too
-		  		          
-		  		  VOLUME ...	// mount point / the files shared between the docker and the system
-		  		  
-		  		  ENTRYPOINT ["<Command>", "<Param1>"] // the command to auto-exec when run
+RUN     // This is the install script that should grab and deploy the binary
+        // We need to checksum the binaries here
+
+VOLUME ...    // mount point / the files shared between the docker and the system
+
+ENTRYPOINT ["<Command>", "<Param1>"] // the command to auto-exec when run
 		  ```
 		- Properly made docker file ([rust](https://github.com/rust-lang/docker-rust/blob/cdceae24a8dfcad5d5c85cf4a949c340437a0d01/1.62.0/buster/Dockerfile)):  
 		-  
