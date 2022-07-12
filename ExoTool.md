@@ -1,28 +1,20 @@
-# How to create ExoTool docker image
-- ## W.I.P
-- ### how should we build it?  
-	- get the dockerfile for the rust container  
-	- add a layer to the [docker file](https://linuxhandbook.com/modifying-docker-image/)  
-	-  
-	  ```
-	  	  FROM Rust:buster // use specific version not a tag for stability ? might not matter
-	  	  
-	  	  ENV ... // enviroment variables 
-	  	  
-	  	  RUN apk add... <dependencies>; \
-	  	  	cargo build --release substrate node;
-	  	  	// we could use curl with a hosted text file that has all the commands
-	  	      // that might not be as secure but more convinient
-	  	      // could compile it on run, but would be smarter and faster to distribute bin
-	  	      // distributing a bin would be best along side a checksum in the image
-	  	      // we need to host the binary somewhere and distribute the dockerfile with a checksum
-	  	  	// need to have an install script that moves the bin to the right path, etc
-	  	      
-	  	  VOLUME ...
-	  	      
-	  	  ENTRYPOINT ["<NodeName>", "<Default Param1>", "<Default Param2>"]
-	  ```
-	- Rust destributes the checksum inside the [dockerfile](https://github.com/rust-lang/docker-rust/blob/cdceae24a8dfcad5d5c85cf4a949c340437a0d01/1.62.0/buster/Dockerfile) with a run command  
+- # Exotool docker deployment  
+	- ## Dockerfile creation / structure  
+		- Rough idea: [Docs](https://docs.docker.com/engine/reference/builder/)  
+		-  
+		  ```
+		  		  FROM rust:buster 	// this is the base / parent image we modify
+		  		  
+		  		  ENV ... // any env. variables we need to set
+		  		  
+		  		  RUN 	// This is the install script that should grab and deploy the binary
+		  		  		// We need to checksum the binaries here too
+		  		          
+		  		  VOLUME ...	// mount point / the files shared between the docker and the system
+		  		  
+		  		  ENTRYPOINT ["<Command>", "<Param1>"] // the command to auto-exec when run
+		  ```
+		- Properly made docker file ([rust](https://github.com/rust-lang/docker-rust/blob/cdceae24a8dfcad5d5c85cf4a949c340437a0d01/1.62.0/buster/Dockerfile)):  
 		-  
 		  ```
 		  		  FROM buildpack-deps:buster
@@ -52,15 +44,6 @@
 		  		      cargo --version; \
 		  		      rustc --version;
 		  ```
-	- **the rust Dockerfile uses rustup.**  
-	- What we should do is distribute bins like rust does:  
-		-  
-		  ```
-		  		  	url="https://static.rust-lang.org/rustup/archive/1.24.3/${rustArch}/rustup-init"; \
-		  		      wget "$url";
-		  ```
-		- we need to host a bin and dockerfile.  
-	- We need to find a safe way to distribute the files and checksum. man in the middle attacks?  
 	- An [`ENTRYPOINT`](https://docs.docker.com/engine/reference/builder/#entrypoint) allows you to configure a container that will run as an executable  
 		- The Entry point should auto exec some paramiters like ports? or should that be up to the users docker run command?  
-	- The [`VOLUME`](https://docs.docker.com/engine/reference/builder/#volume) instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.
+	- The [`VOLUME`](https://docs.docker.com/engine/reference/builder/#volume) instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers.  
