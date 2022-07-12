@@ -2,7 +2,8 @@
 	- ## Dockerfile creation / structure  
 		- Rough idea: [Docs](https://docs.docker.com/engine/reference/builder/)  
 		  ```
-		  FROM rust:buster // this is the base / parent image we modify, doesent have to be debian options: slim-buster, bullseye, alpine
+		  FROM rust:buster // this is the base / parent image we modify
+		  		   //doesent have to be debian options: slim-buster, bullseye, alpine
 		  		  
 		  ENV ... // any env. variables we need to set
 		  		  
