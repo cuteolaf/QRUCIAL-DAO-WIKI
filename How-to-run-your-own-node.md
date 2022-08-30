@@ -1,6 +1,6 @@
 # Running your QDAO node (dev release)
 
-## Minimum system requirements
+## Minimum system requirements for dev release
 
 ```OS: Linux
 CPU: 64-bit, 2+ cores (eg. from AMD Ryzen 3 and Intel i3)
@@ -20,7 +20,7 @@ We have prepared "node-setup.sh" to automate building a QDAO node. Right now, th
 ## Check if the node is running
 ```
 tmux -ls
-ps a|grep qdao
+ps a|egrep "qdao|lar.py"
 ```
 You should see a similar output:
 ```
@@ -29,7 +29,7 @@ qdao-node: 1 windows (created Tue Aug 30 07:35:30 2022)
 
   52023 pts/1    Ssl+   3:55 ./qdao-node/target/debug/qdao-node --dev
   52139 pts/4    Ssl+   2:47 ./exosysd/target/debug/qdao-exosysd
-  52702 pts/3    S+     0:00 grep qdao
+  45299 pts/4    R+     0:00 grep -E qdao|lar.py
 ```
 You can attach to the tmux session using the following commands:
 ```
