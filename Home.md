@@ -8,10 +8,8 @@ QRUCIAL DAO is a system the provides automated and manual auditing services to i
 * [ExoSys](https://github.com/Qrucial/QRUCIAL-DAO/wiki/ExoSys)
 * [ExoTool](https://github.com/Qrucial/QRUCIAL-DAO/wiki/ExoTool)
 * [AuditRep](https://github.com/Qrucial/QRUCIAL-DAO/wiki/Auditrep)
-* Topologies - TBA six
-* How to run your node - TBA knockoff
-* Unit testing - TBA wigy and six
+* [QDAO Topology](https://github.com/Qrucial/QRUCIAL-DAO/wiki/QDAO-Topology)
+* [How to run your node](https://github.com/Qrucial/QRUCIAL-DAO/wiki/How-to-run-your-own-node)
+* [Dev and testing guide](https://github.com/Qrucial/QRUCIAL-DAO/wiki/Development-and-testing-guide)
 * How to contribute - TBA ra33it0
 * Terms and license - TBA ra33it0
-
-## Content is TBA, parts need to be assigned to QDAO devs
