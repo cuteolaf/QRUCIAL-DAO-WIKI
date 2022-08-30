@@ -35,10 +35,12 @@ You can attach to the tmux session using the following commands:
 ```
 tmux a -t qdao-node
 tmux a -t qdao-node
+```
 
 ## How to stop the node
 ```killall qdao-node
-killall qdao-exosysd```
+killall qdao-exosysd
+```
 
 ## Using the nodes, testing and development
 
