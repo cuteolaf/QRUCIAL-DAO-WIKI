@@ -1,6 +1,7 @@
 QDAO Team
 
-```six / David Pethes
+```
+six / David Pethes
 ra33it0 / Sebastian Kraus
 wigy
 achim schneider
