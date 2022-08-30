@@ -1,4 +1,4 @@
-# Running your QDAO node (currently we have development releases)
+# Running your QDAO node (dev release)
 
 ## Minimum system requirements
 
