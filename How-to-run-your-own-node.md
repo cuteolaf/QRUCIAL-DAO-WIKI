@@ -39,8 +39,10 @@ tmux a -t qdao-node
 ```
 
 ## How to stop the node
-```killall qdao-node
+```
+killall qdao-node
 killall qdao-exosysd
+killall lar.py
 ```
 
 ## Using the nodes, testing and development
