@@ -21,8 +21,7 @@ curl --proto '=https' --tlsv1.2 -sSf  https://raw.githubusercontent.com/Qrucial/
 
 ## Check if the node is running
 ```
-tmux -ls
-ps a|egrep "qdao|lar.py"
+tmux -ls && ps a|egrep "qdao|lar.py"
 ```
 You should see a similar output:
 ```
