@@ -11,11 +11,13 @@ Environment: Non-root user.
 ```
 
 
-## Prepare and start the node
+## Prepare and start the full node
 
 We have prepared "node-setup.sh" to automate building a QDAO node. Right now, this script will deploy a local dev node on the machine you are running it on. Execute the following command to start:
 
-```wget https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/main/node-setup.sh && bash node-setup.sh```
+```
+curl --proto '=https' --tlsv1.2 -sSf  https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/node-setup.sh | bash
+```
 
 ## Check if the node is running
 ```
