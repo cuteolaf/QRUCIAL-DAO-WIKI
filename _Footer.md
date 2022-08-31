@@ -1,5 +1,4 @@
 QDAO Team
-
 ```
 six / David Pethes
 ra33it0 / Sebastian Kraus
