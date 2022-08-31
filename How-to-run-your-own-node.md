@@ -21,21 +21,24 @@ curl --proto '=https' --tlsv1.2 -sSf  https://raw.githubusercontent.com/Qrucial/
 
 ## Check if the node is running
 ```
-tmux -ls && ps a|egrep "qdao|lar.py"
+tmux ls && echo "" && ps a|egrep "qdao|lar.py"
 ```
 You should see a similar output:
 ```
-qdao-exosysd: 1 windows (created Tue Aug 30 07:35:40 2022)
-qdao-node: 1 windows (created Tue Aug 30 07:35:30 2022)
+qdao-api: 1 windows (created Wed Aug 31 23:24:47 2022)
+qdao-exosysd: 1 windows (created Wed Aug 31 23:24:47 2022)
+qdao-node: 1 windows (created Wed Aug 31 23:24:42 2022)
 
-  52023 pts/1    Ssl+   3:55 ./qdao-node/target/debug/qdao-node --dev
-  52139 pts/4    Ssl+   2:47 ./exosysd/target/debug/qdao-exosysd
-  45299 pts/4    R+     0:00 grep -E qdao|lar.py
+  63874 pts/3    Ssl+   0:52 ./qdao-node/target/debug/qdao-node --dev
+  63966 pts/4    Ssl+   0:30 ./exosysd/target/debug/qdao-exosysd
+  63969 pts/5    Ss+    0:00 python3 exotools/lar.py
+
 ```
 You can attach to the tmux session using the following commands:
 ```
 tmux a -t qdao-node
-tmux a -t qdao-node
+tmux a -t qdao-exosysd
+tmux a -t qdao-api
 ```
 
 ## How to stop the node
