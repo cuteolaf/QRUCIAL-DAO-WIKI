@@ -16,7 +16,7 @@ Environment: Non-root user.
 We have prepared "node-setup.sh" to automate building a QDAO node. Right now, this script will deploy a local dev node on the machine you are running it on. Execute the following command to start:
 
 ```
-curl --proto '=https' --tlsv1.2 -sSf  https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/node-setup.sh | bash
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/main/node-setup.sh | bash
 ```
 
 ## Check if the node is running
