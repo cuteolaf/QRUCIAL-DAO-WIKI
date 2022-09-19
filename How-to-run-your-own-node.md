@@ -13,6 +13,15 @@ Environment: Non-root user.
 
 ## Prepare and start the full node
 
+On Debian based systems, eg. Ubuntu, you need to have the following installed:
+
+```
+sudo apt update
+sudo apt-get install tmux git curl python3 docker-ce
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install keccak256-cli
+```
+
 We have prepared "node-setup.sh" to automate building a QDAO node. Right now, this script will deploy a local dev node on the machine you are running it on. Execute the following command to start:
 
 ```
