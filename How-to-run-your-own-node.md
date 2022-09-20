@@ -17,7 +17,7 @@ You only need docker to be installed. Everything else will be running inside the
 ```
 # Building the docker image (Milestone 1 version)
 mkdir QDAO && cd QDAO && mkdir scripts
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/dockerfile
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/dockerfile -o dockerfile
 curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/qdao_services.sh -o qdao_services.sh
 docker build -t "qdao:dockerfile" . 
 docker images
