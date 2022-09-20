@@ -10,6 +10,17 @@ GPU: Not needed.
 Environment: Non-root user.
 ```
 
+## Running test node using docker (limited performance)
+
+You only need docker to be installed. Everything else will be running inside the container.
+
+```
+mkdir QDAO && cd QDAO && mkdir scripts
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/dockerfile
+curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/scripts/supervisord.conf -o scripts/supervisord.conf
+docker build -t "qdao:dockerfile" . 
+```
+
 
 ## Prepare and start the full node
 
