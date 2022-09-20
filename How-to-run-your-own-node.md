@@ -23,7 +23,10 @@ docker build -t "qdao:dockerfile" .
 docker images
 
 # Running the docker image
-docker run <image_name>
+docker run --name=qdao <image_name>
+
+# Access the shell of the running node
+docker exec -it qdao bash
 ```
 
 
