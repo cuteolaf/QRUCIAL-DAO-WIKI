@@ -12,4 +12,3 @@ QRUCIAL DAO is a system the provides automated and manual auditing services to i
 * [How to run your node](https://github.com/Qrucial/QRUCIAL-DAO/wiki/How-to-run-your-own-node)
 * [Dev and testing guide](https://github.com/Qrucial/QRUCIAL-DAO/wiki/Development-and-testing-guide)
 * How to contribute - TBA ra33it0
-* Terms and license - TBA ra33it0
