@@ -36,7 +36,7 @@ On Debian based systems, eg. Ubuntu, you need to have the following installed:
 
 ```
 sudo apt update
-sudo apt-get install tmux git curl python3 docker-ce
+sudo apt-get install tmux git curl python3 docker-ce protobuf-compiler
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install keccak256-cli
 ```
