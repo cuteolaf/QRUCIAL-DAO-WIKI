@@ -15,18 +15,17 @@ Environment: Non-root user.
 You only need docker to be installed. Everything else will be running inside the container.
 
 ```
-# Building the docker image (Milestone 1 version)
-mkdir QDAO && cd QDAO && mkdir scripts
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/dockerfile -o dockerfile
-curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/Qrucial/QRUCIAL-DAO/milestone1/docker/files/qdao_services.sh -o qdao_services.sh
-docker build -t "qdao:dockerfile" . 
+# Building the docker image (Main branch)
+git clone https://github.com/Qrucial/QRUCIAL-DAO
+cd QRUCIAL-DAO/docker
+docker build  -t "qdao:V0.3" 
 docker images
 
 # Running the docker image
-docker run --name=qdao <image_name>
+docker run --name=qdao_testing <image_name>
 
 # Access the shell of the running node
-docker exec -it qdao bash
+docker exec -it qdao_testing bash
 ```
 
 
