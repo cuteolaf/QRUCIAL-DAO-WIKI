@@ -45,10 +45,10 @@ A new user can obtain an auditor status by:
 
 At the currentl point of development, the onboarding/signup workflow of new auditors is primarily tested through extensive unit tests which are defined in: `./qdao-node/audit-pallet/src/tests.rs`. These tests cover all aspects of the described onboarding process and proof that our implemented business logic for the extrinsics behaves as expected.
 
-For on-chain testing after compiling and running qdao-node and communicating with it through Substrate Frontend template, we need to start with an existing pre-defined set auf auditors which are already capable of approving new auditors. These initial auditors and their initial scores are now provided through the genesis config of qdao-node. The users `Alice`, `Bob` and `Charlie` are capable of approving the sign-up of new auditors. To test this on chain with the runnning `qdao-node`, we suggest to call the extrinsics through the Substrate Frontend Template:
+For on-chain testing after compiling and running qdao-node and communicating with it through Substrate Frontend template, we need to start with an existing pre-defined set auf auditors which are already capable of approving new auditors. These initial auditors and their initial scores are now provided through the genesis config of qdao-node. The users `Alice`, `Bob` and `Charlie` and `Dave` are capable of approving the sign-up of new auditors. To test this on chain with the runnning `qdao-node`, we suggest to call the extrinsics through the Substrate Frontend Template:
 
 1. Try to approve `Ferdie` by `approve_auditor` through `Alice`. Call should fail, since `Ferdie` did not sign up.
 2. `Ferdie` calls `sign_up` extrinsic. Should work.
 3. Try to approve `Ferdie` by `approve_auditor` through `Alice`. Call be succesfull, since `Ferdie` did sign up now. Second call by `Alice` should fail, since every applicant can't receive to approvals by the same user.
 4. Approval by `Bob` and `Charlie` should work.
-5. Since now `Ferdie` obtained auditor status, further attempts to approve `Ferdie` should fail.  
+5. Since now `Ferdie` obtained auditor status, further attempts to approve `Ferdie` should fail. Especially `Dave` will not be able to approve `Ferdie`, since `Ferdie` already received three approvals. 
