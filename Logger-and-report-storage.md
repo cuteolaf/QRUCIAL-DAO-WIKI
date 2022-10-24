@@ -1,4 +1,5 @@
 ## What is it?
+
 HTTP API.
 
 ## What does it do?
@@ -13,6 +14,6 @@ HTTP API.
 
 ## How does it connect to other parts of the system?
 
-- Input is sent to it from ExoTool
+- Input is coming from ExoTool
 - Extrinsics are sent to ExoSys
 - External users can request reports through the HTTP service.

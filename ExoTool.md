@@ -2,7 +2,7 @@
 
 - docker
 - docker compose (?)
-    - might be useful to have this too, would remove user error.
+  - might be useful to have this too, would remove user error.
 
 ## Installation
 
@@ -19,13 +19,13 @@
     - this runs the same script and shows the output in the terminal
 7.  to execute specific commands run `docker exec <...>`
 
-* * *
+---
 
 ## Experimental ideas
 
-- if we want to run many of these containers in parallel we might have to worry about performance at some point. i believe that using `docker <pause/unpause>` would be the best solution *as far as i know*
-    - but to do this we would have to have some sort of scheduler that monitors resource usage and pauses/ unpauses accordingly
+- If we want to run many of these containers in parallel we might have to worry about performance at some point. I believe that using `docker <pause/unpause>` would be the best solution _as far as i know_
+  - but to do this we would have to have some sort of scheduler that monitors resource usage and pauses/unpauses accordingly
 - Make each started container have a unique hash based on the current thing that needs to be audited.
-    - this would allow us to easily run many in parallel and see what container is working on what file.
-    - something like: `XTPATH=audit_files/"$HASH""_$(date +%s)"`
-        - where HASH = a 512sha hash of the file.
+  - this would allow us to easily run many instances in parallel and see which container is working on which file.
+  - something like: `XTPATH=audit_files/$HASH_$(date +%s)`
+    - where HASH = a 512sha hash of the file.
